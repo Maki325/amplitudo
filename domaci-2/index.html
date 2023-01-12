@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Domaci 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <div class="d-flex w-100 justify-content-end me-5 mt-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Dodaj film
+    </button>
+  </div>
+
+  <div class="col-10 offset-1 mt-3">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Odgledan</th>
+          <th>Naziv</th>
+          <th>Godina</th>
+          <th>Drzava</th>
+          <th>Napomena</th>
+          <th>Glumci</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <form id="novi-film" class="modal-content needs-validation" novalidate>
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Dodaj film</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+          <div class="col-md-9">
+            <label for="naziv" class="form-label">Naziv</label>
+            <input class="form-control" id="naziv" placeholder="Avatar: The Way of Water" aria-describedby="validationNaziv" required>
+            <div id="validationNaziv" class="invalid-feedback">
+              Upisite naziv filma
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="godina" class="form-label">Godina</label>
+            <input type="number" class="form-control" id="godina" placeholder="2022" min="1930" max="2021" required aria-describedby="validationGodina">
+            <div id="validationGodina" class="invalid-feedback">
+              Upisite godinu filma
+            </div>
+          </div>
+
+          <div class="mt-3"></div>
+
+          <div class="col-md-3">
+            <label for="drzava" class="form-label">Drzava</label>
+            <input class="form-control" id="drzava" placeholder="Sjedinjene Američke Države">
+          </div>
+          <div class="col-md-6">
+            <label for="glumci" class="form-label">Glumci</label>
+            <input class="form-control" id="glumci" placeholder="Sam Worthington, Zoe Saldana" required aria-describedby="validationGlumci">
+            <div id="validationGlumci" class="invalid-feedback">
+              Upisite glumce filma
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Odgledan</label>
+            <div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="odgledan" id="odgledan-da" value="da" required>
+                <label class="form-check-label" for="odgledan-da">Da</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="odgledan" id="odgledan-ne" value="ne" checked required>
+                <label class="form-check-label" for="odgledan-ne">Ne</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3"></div>
+
+          <div class="mb-3">
+            <label for="napomena" class="form-label">Napomena</label>
+            <textarea class="form-control" id="napomena" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+          <button type="submit" class="btn btn-primary">Dodaj</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
